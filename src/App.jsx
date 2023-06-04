@@ -1,7 +1,7 @@
 const App = () => {
 
   return (
-    <h1>Rubiano Store</h1>
+    <h1>Store</h1>
   )
 }
 
