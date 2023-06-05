@@ -1,9 +1,13 @@
+import CartContainer from "./components/cart/CartContainer"
 import NavBar from "./components/navbar/NavBar"
 
 const App = () => {
 
   return (
-    <NavBar/>
+    <> 
+      <NavBar/>
+      <CartContainer />
+    </>
   )
 }
 
