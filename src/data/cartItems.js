@@ -24,7 +24,7 @@ const cartItems = [
       id: "4",
       title: "OnePlus 11",
       price: 10,
-      img: "https://fdn2.gsmarena.com/vv/bigpic/oneplus-11.jpg%",
+      img: "https://fdn2.gsmarena.com/vv/bigpic/oneplus-11.jpg",
       amount: 1,
     },
   ];

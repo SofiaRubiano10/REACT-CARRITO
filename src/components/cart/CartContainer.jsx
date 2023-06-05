@@ -1,14 +1,19 @@
 import { useSelector } from "react-redux"
+import CartItem from "./CartItem";
 
 const CartContainer = () => {
   const {cartItems} = useSelector(store =>store.cart);
     
   return (
-    <div>
-        {cartItems.map(item =>{
-            return <h3 key={item.id}>{item.title}</h3>
-        })}
-    </div>
+    <section className="cart-container">
+        <header> Your Shopping Cart </header>
+        <div>
+            {cartItems.map((item) => {
+                return <CartItem key ={item.id} {...item} />;
+                })}
+        </div>
+    </section>
+
   )
 }
 
