@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux"
+import { BsCart2 } from "react-icons/bs"
 
 const CartIcon = () => {
     //Obtiene acceso al store
@@ -6,7 +7,8 @@ const CartIcon = () => {
     
     return (
         <div className="amount-container">
-            <h2>{amount}</h2>
+            <BsCart2 className="cart-icon"/>
+            <span className="badge">{amount}</span>
         </div>
   )
 }
