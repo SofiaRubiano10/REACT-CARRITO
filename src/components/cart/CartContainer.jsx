@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
 import CartItem from "./CartItem";
+import CartFooter from "./CartFooter";
 
 const CartContainer = () => {
   const {cartItems} = useSelector(store =>store.cart);
@@ -12,6 +13,7 @@ const CartContainer = () => {
                 return <CartItem key ={item.id} {...item} />;
                 })}
         </div>
+        <CartFooter/>
     </section>
 
   )

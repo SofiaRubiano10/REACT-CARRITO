@@ -5,7 +5,7 @@ import cartItems from "../../data/cartItems";
 const initialState = {
     cartItems,
     amount: 4,
-    total: 0,
+    total: 2000,
 }
 
 //Creación del slice
