@@ -2,6 +2,18 @@
 $main-font: 'Fira Sans', sans-serif;
 
 //---------COLORES---------
+//header
 $header-bg-color: #2d8dfc;
 $header-lt-color: #fff;
 $badge-bg-color: #70e292;
+// cart container
+$cart-header-bg-color: #79b4f8;
+$cart-header-lt-color: #fff;
+$cart-price-color: #2d8dfc;
+$cart-remove-item-btn-color: #c080f5;
+$cart-remove-item-btn-color-hover: #f580e5;
+$cart-amount-btn-color: #000;
+$cart-amount-btn-color-hover: #727272;
+// footer
+$cart-clear-btn-bg: #fcd2d9;
+$cart-clear-btn-color: #ff1d42;
