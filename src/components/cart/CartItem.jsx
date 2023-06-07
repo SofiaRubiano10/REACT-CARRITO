@@ -1,15 +1,19 @@
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa'
 
 import PropTypes from 'prop-types'
+import { useDispatch } from 'react-redux'
+import { removeItem } from '../../features/cart/cartSlice'
 
 const CartItem = ({id, title, price, img, amount}) => {
+    const dispatch = useDispatch();
     return (
         <article key={id} className='cart-item'>
             <img src={img} alt={title} />
             <div>
                 <h3>{title}</h3>
                 <h3 className='item-price'>${price}</h3>
-                <button className='remove-btn'>Remove</button>
+                <button className='remove-btn' onClick={()=>{
+                dispatch(removeItem(id))}}>Remove</button>
             </div>
             <div>
                 <button className='amount-btn'> 
