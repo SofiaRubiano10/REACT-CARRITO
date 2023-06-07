@@ -5,13 +5,19 @@ import cartItems from "../../data/cartItems";
 const initialState = {
     cartItems,
     amount: 4,
-    total: 2000,
+    total: 0,
 }
 
 //Creación del slice
 const cartSlice = createSlice({
     name: 'cart',
     initialState,
+    reducers:{
+        clearCart:(state) =>{
+            state.cartItems= [];
+        }
+    }
 })
 
+export const {clearCart} = cartSlice.actions
 export default cartSlice.reducer;
