@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux"
-import { clearCart } from "../../features/cart/cartSlice";
+import { openModal } from "../../features/modal/modalSlice";
 
 const CartFooter = () => {
     const {total} =useSelector((state) => state.cart)
@@ -17,7 +17,7 @@ const CartFooter = () => {
             </h4>
         </div>
         <button className="btn-clear-cart" onClick={() => {
-        dispatch(clearCart())}}>Clear cart</button>
+        dispatch(openModal())}}>Clear cart</button>
     </footer>
   )
 }
