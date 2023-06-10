@@ -10,14 +10,17 @@ const initialState = {
 };
 
 const url = "http://localhost:3000/items";
-export const getCartItems = createAsyncThunk("cart/getCartItems", async () => {
-  try {
-    const response = await axios.get(url);
-    return response.data;
-  } catch (error) {
-    return [];
+export const getCartItems = createAsyncThunk(
+  "cart/getCartItems",
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get(url);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue("Something went wrong!");
+    }
   }
-});
+);
 //Creación del slice
 const cartSlice = createSlice({
   name: "cart",
@@ -65,20 +68,18 @@ const cartSlice = createSlice({
       .addCase(getCartItems.pending, (state) => {
         //Código cuando la promesa está pendiente. Indica que la info está cargando
         state.isLoading = true;
-        console.log("pending");
       })
       .addCase(getCartItems.fulfilled, (state, action) => {
         //Código al completar exitosamente la promesa. Indica que la info ya no se está cargando
         state.isLoading = false;
-        console.log(action);
-        console.log("fulfield");
         //Obtiene los datos del backend
         state.cartItems = action.payload;
       })
       .addCase(getCartItems.rejected, (state) => {
         //Código al completar la promesa de forma no exitosa. Indica que la información ya no se está cargando
         state.isLoading = false;
-        console.log("rejected");
+        state.cartItems = [];
+        console.warn("Hubo un error");
       });
   },
 });
