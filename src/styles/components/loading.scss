@@ -1,0 +1,15 @@
+@use "../variables" as v;
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: v.$loading-bg-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    margin-top: 1rem;
+    font-weight: 400;
+  }
+}

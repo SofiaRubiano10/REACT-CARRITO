@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 // Reducers
 import { calculateTotals, getCartItems } from "./features/cart/cartSlice";
+import Loading from "./components/Loading";
 
 const App = () => {
   // obtiene acceso a los items del cart
@@ -25,9 +26,7 @@ const App = () => {
     // Recalcula totales
   }, [cartItems, dispatch]);
 
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  }
+  if (isLoading) return <Loading />;
 
   return (
     <>
